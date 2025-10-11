@@ -1,0 +1,205 @@
+/* Main Styles */
+:root {
+    /* New bold palette requested by user */
+    --accent-deep: #4d2177; /* (77,33,119) */
+    --accent-cyan: #006990; /* (0,105,144) */
+    --accent-lime: #83a40b; /* (131,164,11) */
+    --accent-magenta: #8b0066; /* (139,0,102) */
+    --muted-gray: #aaaaaa; /* (170,170,170) */
+
+    /* Derived tokens */
+    --bg-dark: linear-gradient(180deg, rgba(29,12,39,1) 0%, rgba(18,12,28,1) 100%);
+    --text-color: var(--muted-gray);
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: white;
+    -webkit-font-smoothing:antialiased;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    background: white;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-list a {
+    color: var(--accent-deep);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.nav-list a:hover {
+    color: var(--accent-magenta);
+    transform: translateY(-2px);
+}
+
+/* Main Content */
+.main-content {
+    margin-top: 80px; /* default for subpages */
+    padding: 2rem 0;
+}
+
+/* Utility class: apply when a hero pushes page content (used on homepage only) */
+.hero-pushed {
+    margin-top: 0;
+    background: white;
+    position: relative;
+    z-index: 1;
+}
+
+.section {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-left: 6px solid var(--accent-deep);
+}
+
+.section-title {
+    color: var(--accent-deep);
+    margin-bottom: 1.2rem;
+    font-size: 1.9rem;
+    padding-bottom: 0.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.75rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.28s cubic-bezier(.2,.9,.3,1), box-shadow 0.28s ease;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 26px 60px rgba(0,0,0,0.6);
+}
+
+/* Skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.skill-item {
+    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-deep));
+    color: var(--white);
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.06);
+    font-weight: 700;
+}
+
+/* Timeline for Experience */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 1.25rem;
+    border-left: 4px solid var(--accent-lime);
+}
+
+.timeline-date {
+    color: var(--accent-cyan);
+    font-weight: 800;
+}
+
+/* Contact Form */
+.contact-form {
+    display: grid;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.btn {
+    background: linear-gradient(90deg, var(--accent-magenta), var(--accent-deep));
+    color: var(--white);
+    padding: 0.9rem 1.6rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-weight: 800;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 40px rgba(139,0,102,0.18);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section {
+        padding: 1rem;
+    }
+}
