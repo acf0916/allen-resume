@@ -1,78 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Allen C Fredrick - Professional Resume</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/slides.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Allen C Fredrick - Professional Resume</title>
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/slides.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  
+  <script src="js/nav.js" defer></script> 
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <ul class="nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="slides-hero">
-      <div class="slides-container"></div>
-      <div class="slides-nav">
-        <button class="slide-btn prev" aria-label="Previous Slide">&#8592;</button>
-        <button class="slide-btn next" aria-label="Next Slide">&#8594;</button>
-      </div>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <button class="burger" aria-label="Toggle menu">☰</button>
+      <ul class="nav-list">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <main class="main-content hero-pushed">
-        <div class="container">
-            <section class="section">
-                <h2 class="section-title">Professional Summary</h2>
-                <div class="card">
-                    <p>Experienced Lead Technical Writer with a proven track record spanning over 17 years in technical documentation, content development, and team leadership. Started career in customer service and progressively advanced through technical support and content management roles. Demonstrated expertise in creating comprehensive technical documentation, API guides, and product documentation using various authoring tools and methodologies.</p>
-                </div>
-            </section>
+  <!--<div class="slides-hero">
+    <div class="slides-container"></div>
+    <div class="slides-nav">
+      <button class="slide-btn prev" aria-label="Previous Slide">&#8592;</button>
+      <button class="slide-btn next" aria-label="Next Slide">&#8594;</button>
+    </div>
+  </div>-->
 
-            <section class="section">
-                <h2 class="section-title">Core Competencies</h2>
-                <div class="card">
-                    <ul>
-                        <li>Technical Documentation & Content Development</li>
-                        <li>API & SDK Documentation</li>
-                        <li>DITA/XML & Documentation Tools</li>
-                        <li>Team Leadership & Project Management</li>
-                        <li>Agile/Scrum Methodologies</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">Key Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-item">Technical Writing</div>
-                    <div class="skill-item">API Documentation</div>
-                    <div class="skill-item">DITA/XML</div>
-                    <div class="skill-item">Content Management</div>
-                    <div class="skill-item">Team Leadership</div>
-                    <div class="skill-item">Project Planning</div>
-                </div>
-            </section>
+  <main class="main-content hero-pushed">
+    <div class="container">
+      <section class="section">
+        <h2 class="section-title">Professional Summary</h2>
+        <div class="card">
+          <p>
+            Experienced Lead Technical Writer with a proven track record spanning over 17 years in technical documentation, content development, and team leadership. Started career in customer service and progressively advanced through technical support and content management roles. Demonstrated expertise in creating comprehensive technical documentation, API guides, and product documentation using various authoring tools and methodologies.
+          </p>
         </div>
-    </main>
+      </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Allen C Fredrick. All rights reserved.</p>
+      <section class="section">
+        <h2 class="section-title">Core Competencies</h2>
+        <div class="card">
+          <ul>
+            <li>Technical Documentation & Content Development</li>
+            <li>API & SDK Documentation</li>
+            <li>DITA/XML & Documentation Tools</li>
+            <li>Team Leadership & Project Management</li>
+            <li>Agile/Scrum Methodologies</li>
+          </ul>
         </div>
-    </footer>
-    <script src="js/slides.js"></script>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Key Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-item">Technical Writing</div>
+          <div class="skill-item">API Documentation</div>
+          <div class="skill-item">DITA/XML</div>
+          <div class="skill-item">Content Management</div>
+          <div class="skill-item">Team Leadership</div>
+          <div class="skill-item">Project Planning</div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Allen C Fredrick. All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
