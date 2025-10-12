@@ -9,21 +9,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <!-- Scripts -->
     <script src="js/nav.js" defer></script>
+	  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+  <!-- Optional: fallback for older browsers -->
+  <link rel="shortcut icon" href="images/favicon.ico">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container nav-container">
-            <button class="burger" aria-label="Toggle menu">☰</button>
-            <ul class="nav-list">
-                <li><a href="index.html">Overview</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <button class="burger" aria-label="Toggle menu">☰</button>
+      <div class="nav-list">
+        <a href="index.html">Overview</a>
+		<a href="highlights.html">Highlights</a>
+		<a href="experience.html">Experience</a>
+        <a href="education.html">Education</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html" class="active">Contact</a>
+		</div>
+    </div>
+  </nav>
 
     <main class="main-content">
         <div class="container">
@@ -77,6 +82,13 @@
                 </div>
             </section>
         </div>
+<div class="navigation-arrows" style="display: flex; justify-content: center; margin-top: 30px;">
+  <div class="next-page">
+    <a href="projects.html" aria-label="Go to next page" style="font-size:2.5rem; color:#7e57c2; margin-right:-20px;">
+      <i class="fas fa-arrow-left"></i>
+    </a>
+  </div>
+</div>
     </main>
 
     <footer>
