@@ -33,39 +33,102 @@ body {
     padding: 0 20px;
 }
 
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border-style: solid;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 15px; /* centers image and adds space below */
+  border: 1px solid var(--accent-deep); /* optional subtle border */
+}
+
+
 /* ===== Responsive Navbar ===== */
 .navbar {
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
-  background: var(--accent-deep);
+  background: rgba(255, 255, 255, 0.1);  /* semi-transparent frosted look */
+  backdrop-filter: blur(10px);           /* blur the background behind */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
   padding: 1rem 0;
-  backdrop-filter: blur(6px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;       /* smooth effect if you scroll/change */
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.nav-list a {
+  text-decoration: none;
+  color: #333;
+  background: #f0f0f0;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+/* Hover effect */
+.nav-list a:hover {
+  background-color: #7e57c2;
+  color: #fff;
+}
+
+/* Active tab */
+.nav-list a.active {
+  background-color: #7e57c2;  /* highlight background */
+  color: #ffffff;                /* text color */
+  font-weight: 600;           /* optional */
+  border-radius: 8px;         /* match navbar links */
+  transition: all 0.3s ease;
 }
 
 .nav-list {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
+    display: flex;               /* horizontal row */
+    justify-content: center;
+    gap: 2rem;
+    position: static;            /* default positioning */
+    transform: none;             /* reset transform */
+    background: transparent;     /* no background overlay */
+    padding: 0;
 }
 
+.nav-list li {
+  border-bottom: 1px solid #ccc; /* light gray separator */
+  padding: 2px 2px;               /* spacing above/below text */
+}
+
+.nav-list li:last-child {
+  border-bottom: none;           /* remove line after last item */
+}
+
+
 .nav-list li a {
-  color: white;
+  
   text-decoration: none;
   padding: 10px 15px;
   transition: 0.3s;
 }
 
 .nav-list li a.active {
-  background-color: #7e57c2;
-  border-radius: 6px;
+background-color: #7e57c2;   /* purple background */
+    color: #ffffff;               /* text color */
+    font-weight: bold;            /* optional emphasis */
+    border-radius: 6px;           /* rounded edges */
+    padding: 10px 15px;           /* extra padding for better appearance */
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .nav-list li a:hover {
-  background-color: #9b59b6;
+  color: white;
+  font-weight: bold;
+  background-color: #7e57c2;
   border-radius: 6px;
 }
 
@@ -84,40 +147,113 @@ body {
   z-index: 10001;
 }
 
+.navigation-arrows {
+  display: flex;
+  justify-content: space-between; /* one arrow left, one arrow right */
+  align-items: center;
+  margin-top: 30px;
+  width: 100%;         /* full width container */
+  max-width: 600px;    /* optional max width */
+  margin-left: auto;
+  margin-right: auto;  /* centers container */
+}
+
+.prev-page a {
+  font-size: 2.5rem;
+  color: #7e57c2;
+  transition: transform 0.3s, color 0.3s;
+  margin-left: -20px; /* move left arrow further left */
+}
+
+.prev-page a:hover {
+  color: #5e35b1;
+  transform: scale(1.2);
+}
+
+.next-page a {
+  font-size: 2.5rem;
+  color: #7e57c2;
+  transition: transform 0.3s, color 0.3s;
+  margin-right: -20px; /* move right arrow further right */
+}
+
+.next-page a:hover {
+  color: #5e35b1;
+  transform: scale(1.2);
+}
+
+
 /* Mobile styles */
 @media (max-width: 768px) {
   .burger {
     display: block;
-	position: sticky;
-    color: var(--white);
+    position: sticky;
+    color: #7e57c2;
     background: transparent;
-    border: none;
+    border: 1px solid #7e57c2; 
     font-size: 24px;
-    padding: 8px;
+    padding: 8px 12px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    border-radius: 12px;
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
   }
 
   .burger:hover {
-    transform: scale(1.1);
+    background: #7e57c2;     
+    color: #ffffff;           
   }
 
   .nav-list {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    background: var(--accent-deep);
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    position: fixed;
-    top: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10000;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    min-width: 200px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        background: rgba(255, 255, 255, 0.71);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        border: 2px solid #7e57c2;
+        position: fixed;
+        top: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10000;
+        min-width: 200px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3), 0 12px 24px rgba(0,0,0,0.2);
   }
+
+  /* Show menu when burger is clicked */
+  .nav-list.show {
+    display: flex;
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -20px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
+}
+
+
+/* Separator lines between list items */
+.nav-list li {
+    border-bottom: 1px solid #7e57c2; /* visible separator */
+    width: 100%;                        /* full width */
+    padding: 10px 0;
+    text-align: center;                 /* optional: center text */
+}
+
+.nav-list li:last-child {
+    border-bottom: none;                /* no line after last item */
+}
+
 
   .nav-list.show {
     display: flex;
@@ -140,10 +276,72 @@ body {
   padding-top: 80px;
 }
 
+.aligned-list {
+  margin: 15px 0;
+  padding-left: 25px; /* ensures consistent bullet alignment */
+  list-style-type: disc;
+}
+
+.aligned-list li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+  padding-left: 5px;
+}
+
+.aligned-list ul {
+  margin-top: 10px;
+  padding-left: 25px; /* properly indents nested bullets */
+  list-style-type: circle;
+}
+
+.aligned-list ul li {
+  margin-bottom: 4px;
+}
+
+
+
+.card ul li {
+  margin-bottom: 6px;      /* spacing between bullet items */
+  line-height: 1.6;        /* better readability */
+}
+
+
+.card ul {
+  list-style-type: square;   /* square bullets */
+  padding-left: 35px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #333;              /* text color */
+}
+
+.card ul li {
+  position: relative;
+  margin-bottom: 6px;
+}
+
+/* Nested list with custom bullet color */
+.card ul ul {
+  list-style: disc;          /* solid round bullets */
+  margin-top: 5px;
+  padding-left: 25px;
+  color: yellow;             /* text color */
+}
+
+/* Ensure bullets themselves get the color */
+.card ul ul li::marker {
+  color: yellow;             /* bullet color */
+}
+
+.card ul li::marker {
+  color: #333;               /* parent bullets color */
+}
+
+
+
 
 /* Main Content */
 .main-content {
-    margin-top: 8px; /* default for subpages */
+    margin-top: 50px; /* default for subpages */
     padding: 2rem 0;
 }
 
@@ -219,6 +417,12 @@ body {
     color: var(--accent-cyan);
     font-weight: 800;
 }
+
+.company-name {
+    color: #7e57c2;
+    font-weight: 800;
+}
+
 
 /* Contact Form */
 .contact-form {

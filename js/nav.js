@@ -28,3 +28,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+  // Get all nav links
+  const navLinks = document.querySelectorAll('.nav-list a');
+
+  // Get current page filename
+  const currentPage = window.location.pathname.split("/").pop();
+
+  // Loop through links
+  navLinks.forEach(link => {
+    // Check if link href matches current page
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');  // Add active class
+    }
+  });
+  
+
+  const link = document.createElement('link');
+  link.rel = 'icon';
+  link.type = 'image/png';
+  link.href = 'images/favicon.png';
+  document.head.appendChild(link);
+
