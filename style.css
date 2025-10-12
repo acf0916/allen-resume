@@ -1,0 +1,288 @@
+/* Import Google Fonts for a modern, professional look */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@700;900&display=swap');
+
+/* Basic Reset and Variables */
+:root {
+    /* Fonts */
+    --font-headline: 'Poppins', sans-serif; /* Bold, impactful font for main titles */
+    --font-body: 'Inter', sans-serif;      /* Clean, readable font for text and navigation */
+    
+    /* Colors */
+    --color-text-dark: #121212; /* Near-black for high contrast */
+    --color-text-light: #f0f0f0; 
+    --color-subtle-light: rgba(0, 0, 0, 0.4); /* Softer secondary text */
+    --color-bg-subtle: #f5f7fa; /* Very light, cool background */
+}
+
+/* Basic Reset and Variables */
+/* ... (existing :root variables) ... */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    /* ------------------------------------- */
+    /* KEY FIXES TO REMOVE SCROLLBAR START */
+    /* ------------------------------------- */
+    height: 100%;
+    width: 100%; /* Ensure both are explicitly 100% of viewport */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    overflow-y: hidden; /* Prevents vertical scrolling */
+    /* ------------------------------------- */
+    /* KEY FIXES TO REMOVE SCROLLBAR END */
+    /* ------------------------------------- */
+    font-family: var(--font-body);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ------------------------------------ */
+/* MAIN LAYOUT: Split Screen (Desktop View) */
+/* ------------------------------------ */
+
+.landing-container {
+    display: grid;
+    /* Two columns: one 40% wide, one 60% wide */
+    grid-template-columns: 40% 60%; 
+    /* Use 100vh here to fill the screen */
+    height: 100vh; 
+}
+
+
+/* ------------------------------------ */
+/* LEFT SECTION: Hero/Intro */
+/* ------------------------------------ */
+
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 40px;
+    color: var(--color-text-dark);
+    
+    /* Updated Background Gradient (Lighter, softer, more ethereal) */
+    background: var(--color-bg-subtle);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Simple graphic overlay for the wavy effect - slightly stronger for depth */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 10% 20%, rgba(180, 195, 210, 0.4) 0%, transparent 40%);
+    opacity: 0.8;
+}
+
+
+.hero-content {
+    max-width: 450px;
+    z-index: 1; 
+}
+
+.tagline {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-subtle-light);
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
+
+.headline {
+    font-size: 3.2rem;
+    font-weight: 900;
+    line-height: 1.15;
+    font-family: var(--font-headline);
+}
+
+/* ------------------------------------ */
+/* RIGHT SECTION: Index Grid (Desktop View) */
+/* ------------------------------------ */
+
+.index-grid-section {
+    background: #000; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.index-grid {
+	background: white;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(4, 1fr); 
+    width: 100%;
+    height: 100%;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text-light);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother transition */
+    cursor: pointer;
+	border-radius: 20px;
+}
+
+.grid-item:hover {
+    transform: scale(1.04); /* Subtle lift */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Added shadow for depth */
+    z-index: 10;
+}
+
+.grid-item i {
+    font-size: 2.8rem; /* Slightly larger icon */
+    margin-bottom: 15px;
+}
+
+.grid-item h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+}
+
+/* --- UPDATED GRADIENT COLOR PALETTE --- */
+
+.item-1 { background: linear-gradient(135deg, #FF9A8B, #FF6A88); } /* Pink/Coral */
+.item-2 { background: linear-gradient(135deg, #FFC371, #FF5F6D); } /* Sunset Orange */
+.item-3 { background: linear-gradient(135deg, #5EE0F0, #6DD5FA); } /* Sky Blue */
+.item-4 { background: linear-gradient(135deg, #A8C0FF, #373B44); } /* Soft Blue/Dark Grey */
+.item-5 { background: linear-gradient(135deg, #3F5EFB, #FC466B); } /* Bold Purple/Pink */
+.item-6 { background: linear-gradient(135deg, #00B4DB, #0083B0); } /* Deep Ocean Blue */
+.item-7 { background: linear-gradient(135deg, #1D976C, #93F9B9); } /* Vivid Green */
+.item-8 { background: linear-gradient(135deg, #FAD7A1, #E96D71); } /* Gold/Rose */
+
+
+/* ------------------------------------ */
+/* RESPONSIVENESS: Tablet/Small Desktop (Max width 900px) */
+/* ------------------------------------ */
+
+@media (max-width: 900px) {
+    .landing-container {
+        grid-template-columns: 1fr; 
+        height: auto; 
+    }
+    
+    .hero-section {
+        min-height: 30vh; 
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 90%;
+        text-align: center; 
+    }
+
+    .headline {
+        font-size: 2.2rem; 
+    }
+
+    .tagline {
+        font-size: 0.9rem;
+    }
+    
+    .index-grid {
+        /* Switch to a 4x2 layout for tablets (4 columns, 2 rows) */
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr); 
+        min-height: 50vh; 
+    }
+
+    .grid-item i {
+        font-size: 1.5rem; 
+        margin-bottom: 10px;
+    }
+
+    .grid-item h3 {
+        font-size: 0.8rem; 
+    }
+    
+    .grid-item:hover {
+        transform: scale(1.02); /* Less aggressive scale on smaller screens */
+        box-shadow: none;
+    }
+}
+
+
+/* ------------------------------------ */
+/* RESPONSIVENESS: Mobile Phone (Max width 500px) */
+/* ------------------------------------ */
+
+@media (max-width: 500px) {
+    .hero-section {
+        min-height: 25vh; 
+        padding: 40px 15px;
+    }
+    
+    .headline {
+        font-size: 1.5rem; 
+    }
+
+    .tagline {
+        font-size: 0.75rem;
+    }
+
+    .index-grid {
+        /* Switch to a 2x4 layout for phones (2 columns, 4 rows) */
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        min-height: 80vh; 
+    }
+    
+    .grid-item i {
+        font-size: 1.8rem; 
+    }
+
+    .grid-item h3 {
+        font-size: 0.9rem; 
+    }
+}
+
+/* ------------------------------------ */
+/* KEYFRAME ANIMATIONS */
+/* ------------------------------------ */
+
+@keyframes textFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styling for the Background Video */
+#hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Use transform to center the video */
+    transform: translate(-50%, -50%); 
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0; /* Keep it behind the text (hero-content) */
+    
+    /* --- APPLY 50% OPACITY HERE --- */
+    opacity: 0.5; 
+}
