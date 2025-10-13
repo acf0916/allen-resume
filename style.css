@@ -54,6 +54,24 @@ a {
     height: 100vh; 
 }
 
+.profile-container {
+    width: 240px;               /* Increased size by 100% */
+    height: 240px;
+    
+    border-radius: 15px;        /* Rounded corners */
+    overflow: hidden;            /* Crop image to fit container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;              /* Center horizontally */
+}
+
+#hero-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;           /* Ensure image covers square without distortion */
+    user-select: none;           /* Prevent text/image selection */
+}
 
 /* ------------------------------------ */
 /* LEFT SECTION: Hero/Intro */
@@ -68,7 +86,7 @@ a {
     color: var(--color-text-dark);
     
     /* Updated Background Gradient (Lighter, softer, more ethereal) */
-    background: var(--color-bg-subtle);
+   
     position: relative;
     overflow: hidden;
 }
@@ -81,7 +99,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(circle at 10% 20%, rgba(180, 195, 210, 0.4) 0%, transparent 40%);
+    
     opacity: 0.8;
 }
 
@@ -125,6 +143,7 @@ a {
     grid-template-rows: repeat(4, 1fr); 
     width: 100%;
     height: 100%;
+	gap: 15px;
 }
 
 .grid-item {
@@ -199,10 +218,23 @@ a {
     }
     
     .index-grid {
-        /* Switch to a 4x2 layout for tablets (4 columns, 2 rows) */
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(2, 1fr); 
-        min-height: 50vh; 
+        display: grid;                         /* Use grid layout */
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        grid-auto-rows: minmax(100px, auto);   /* Flexible row height */
+        gap: 15px;                              /* Space between tiles */
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        max-height: 70vh;                       /* Optional: scrollable if needed */
+        overflow-y: auto;
+    }
+
+    .grid-item {
+        width: 100%;                             /* Tile fills its grid cell */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .grid-item i {
@@ -212,10 +244,11 @@ a {
 
     .grid-item h3 {
         font-size: 0.8rem; 
+        text-align: center;
     }
     
     .grid-item:hover {
-        transform: scale(1.02); /* Less aggressive scale on smaller screens */
+        transform: scale(1.02); 
         box-shadow: none;
     }
 }
@@ -240,18 +273,24 @@ a {
     }
 
     .index-grid {
-        /* Switch to a 2x4 layout for phones (2 columns, 4 rows) */
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-        min-height: 80vh; 
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        
+        overflow-y: auto;         /* Vertical scroll */
+        padding: 8px;
+    }
+
+    .grid-item {
+        width: 100%; 
     }
     
     .grid-item i {
-        font-size: 1.8rem; 
+        font-size: 1.5rem; 
     }
 
     .grid-item h3 {
-        font-size: 0.9rem; 
+        font-size: 0.8rem; 
     }
 }
 
