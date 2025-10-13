@@ -70,7 +70,11 @@ body {
 .nav-list a {
   text-decoration: none;
   color: #333;
+  font-weight: bold;
   background: #f0f0f0;
+  border-style: solid;
+    border-width: thin;
+    border-color: #7e57c2;
   padding: 8px 15px;
   border-radius: 8px;
   transition: all 0.3s ease;
