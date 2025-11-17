@@ -8,14 +8,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+  <script>
+    // Dynamically add favicon
+    const link = document.createElement('link');
+    link.rel = 'icon';
+    link.type = 'image/png';
+    link.href = 'images/favicon.png';
+    document.head.appendChild(link);
+  </script>
     <main class="landing-container">
 
 <section class="hero-section">
-    <video playsinline autoplay muted loop id="hero-video">
-<source src="images/bg.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+ 
     <div class="hero-content">
+<div class="profile-container">
+    <img src="images/bg.png" alt="Profile GIF" id="hero-photo" oncontextmenu="return false;">
+</div>
+
         <h2 class="tagline">Allen C Frederick • Bangalore, India • Self-Built Developer • 6 Major Skills • 6 Organizations Strong.</h2>
         <h1 class="headline">Technical Content Architect: Building Knowledge from Guides to XML.</h1>
     </div>
